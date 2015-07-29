@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	h1 Translator 
+
+	h3 Your Language:
+	select#fromLang
+		option(value="fr") French
+		option(value="es") Spanish
+		option(value="it") Italian
+		option(value="ga") Irish
+		option(value="de") German
+		option(value="pl") Polish
+		option(value="da") Danish
+		option(value="ja") Japanese
+		option(value="pt") Portugese
+		option(value="en") English
+
+	h3 Translate to: 
+	select#toLang
+		option(value="fr") French
+		option(value="es") Spanish
+		option(value="it") Italian
+		option(value="ga") Irish
+		option(value="de") German
+		option(value="pl") Polish
+		option(value="da") Danish
+		option(value="ja") Japanese
+		option(value="pt") Portugese
+		option(value="en") English
+
+	input(type="text" id="finalWord")
+	button(id="submit-translation") Translate
+	//- input(type="submit" id="submit" value="submit") 
+
+	.resultBox
+		p This your result:
+ 
+		
