@@ -28,21 +28,7 @@
 
 	});
 
-	// for part II - quiz
-
-
- $('#submit-quiz').on('click', function(){
- 	
-	$.ajax({
-
-		method   : 'post',
-		url      : 'api/quiz',
-		data     :  { language: $('#quiz-lang').val() }
-
-	})
- })
-
-		var wordArray = [
+	var wordArray = [
 		'perigynous',
 		'crimmer',
 		'nonclastic',
@@ -55,8 +41,39 @@
 		'thalweg'
 	]
 
+	// for part II - quiz
+	 $('#submit-quiz').on('click', function(){
+	 	
+		$.ajax({
+			method   : 'post',
+			url      : 'api/quiz',
+			data     :  {
+				language: $('#quiz-lang').val()
+			},
+			success	 : function(resData) {
+				console.log(resData);
+			}
+		})
+	 })
+
 	var random = _.sample(wordArray)
 	$('#randomWord').text(random)
+
+	 $('#submit-word').on('click', function(){
+	 	
+		$.ajax({
+			method   : 'post',
+			url      : 'api/quiz/question',
+			data     :  {
+				question: $('#randomWord').text(),
+				answer: $('#guessedWord').val()
+			},
+			success: function(resData) {
+
+			}
+		})
+	 })
+
 
 
 
