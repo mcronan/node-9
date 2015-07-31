@@ -2,7 +2,6 @@
   "dependencies": {
     "body-parser": "^1",
     "express": "^4",
-    "google-translate": "^1.0.0",
     "jade": "^1",
     "mongoose": "^4.1.0"
   }

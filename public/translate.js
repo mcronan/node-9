@@ -1,5 +1,11 @@
-$(document).on('ready', function () {
+ $(document).on('ready', function () {
 
+ 	$('.hide').hide()
+ 	$('#submit-quiz').on('click', function() {
+ 		$('.hide').show()
+ 	})
+
+ 	// for part I - translator
 	$('#submit-translation').on('click', function(e) {
 		//e.preventDefault()
 		console.log('Button clicked on client!');
@@ -21,5 +27,37 @@ $(document).on('ready', function () {
 		});
 
 	});
+
+	// for part II - quiz
+
+
+ $('#submit-quiz').on('click', function(){
+ 	
+	$.ajax({
+
+		method   : 'post',
+		url      : 'api/quiz',
+		data     :  { language: $('#quiz-lang').val() }
+
+	})
+ })
+
+		var wordArray = [
+		'perigynous',
+		'crimmer',
+		'nonclastic',
+		'gluepot',
+		'tesseract',
+		'neap',
+		'nonsolidifying',
+		'subestuarine',
+		'thyiads',
+		'thalweg'
+	]
+
+	var random = _.sample(wordArray)
+	$('#randomWord').text(random)
+
+
 
 }); // End Ready

@@ -1,3 +1,32 @@
 extends layout 
 
 block content
+	h1 Quiz
+
+	h3 What language do you want to study?
+	select#quiz-lang
+		option(value="fr") French
+		option(value="es") Spanish
+		option(value="it") Italian
+		option(value="ga") Irish
+		option(value="de") German
+		option(value="pl") Polish
+		option(value="da") Danish
+		option(value="ja") Japanese
+		option(value="pt") Portugese
+		option(value="en") English
+
+	button(id="submit-quiz") Start Quiz!
+
+	div.hide
+		h3 Word: 
+
+		h4#randomWord
+
+		h3 Guess here: 
+
+		input(id="guessedWord")
+		button(id="submittedWord") Submit
+
+
+		
