@@ -22,6 +22,6 @@ app.post('/api/quiz', apiController.apiQuiz)
 app.post('/api/quiz/question', apiController.apiQuestion)
 
 
-var server = app.listen(8322, function() {
+var server = app.listen(3000, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });

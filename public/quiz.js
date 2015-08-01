@@ -5,45 +5,46 @@ $(document).on('ready', function () {
  	});
 
  	var wordArray = [
-		'perigynous',
-		'crimmer',
-		'nonclastic',
-		'gluepot',
-		'tesseract',
-		'neap',
-		'nonsolidifying',
-		'subestuarine',
-		'thyiads',
-		'thalweg'
+		'house',
+		'cat',
+		'boat',
+		'farm',
+		'going',
+		'near',
+		'far ',
+		'computer',
+		'country',
+		'town'
 	];
 
     var questionCounter = 0;
 	var random = _.sample(wordArray)
 	$('#randomWord').text(random)
 
-    	// for part II - quiz
+    // everytime submit quiz is clicked, a new quiz
+    // object is created
 	 $('#submit-quiz').on('click', function(){
 	 	
 		$.ajax({
-			method   : 'post',
-			url      : 'api/quiz',
+			method   : 'POST',
+			url      : '/api/quiz',
 			data     :  {
 				language: $('#quiz-lang').val()
 			},
 			success	 : function(resData) {
 				console.log(resData);
+				// this is the object ID
 				$('.hide-id').text(resData._id);
 			}
 		})
 	 });
 
-
-
 	 $('#submit-word').on('click', function() {
 	 	
 		$.ajax({
-			method   : 'post',
-			url      : 'api/quiz/question',
+			method   : 'POST',
+			// this url is arbitrary but must be consistent
+			url      : '/api/quiz/question',
 			data     :  {
 				question: $('#randomWord').text(),
 				answer: $('#guessedWord').val(),

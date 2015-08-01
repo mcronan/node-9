@@ -12,8 +12,9 @@ var questionSchema = mongoose.Schema({
 	question : String, 
 })
 
-var Question = mongoose.model('question', questionSchema);
+// collections
 var Quiz = mongoose.model('quiz', quizSchema);
+var Question = mongoose.model('question', questionSchema);
 
 module.exports = {
 	quiz: Quiz,
